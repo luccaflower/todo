@@ -1,0 +1,7 @@
+<app-add (onAddGoal)="add($event)"></app-add>
+<app-goal
+  *ngFor="let goal of goals"
+  [goal]="goal"
+  (onDeleteGoal)="delete(goal)"
+  (onCompleteGoal)="complete(goal)"
+></app-goal>

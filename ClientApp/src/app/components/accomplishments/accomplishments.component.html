@@ -1,0 +1,5 @@
+<app-goal
+  *ngFor="let goal of goals"
+  [goal]="goal"
+  (onDeleteGoal)="delete(goal)"
+></app-goal>

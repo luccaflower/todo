@@ -1,0 +1,23 @@
+<h2>
+  {{ goal.title }}
+  <fa-icon
+    [icon]="icon"
+    [ngStyle]="{ color: 'red' }"
+    (click)="onDelete(goal)"
+  ></fa-icon>
+</h2>
+<p>{{ goal.description }}</p>
+<p>
+  <b *ngIf="goal.deadline">Deadline: </b>
+  {{ goal.deadline?.toLocaleDateString(undefined, dateFormat) }} <br />
+  <b *ngIf="goal.accomplished">Accomplished on:</b>
+  {{ goal.accomplished?.toLocaleDateString(undefined, dateFormat) }} <br />
+  <button
+    *ngIf="!goal.accomplished"
+    class="btn btn-success"
+    type="submit"
+    (click)="onComplete(goal)"
+  >
+    Complete
+  </button>
+</p>
